@@ -8,7 +8,7 @@
 @endsection
 @section('content')
     <div class="content-main__container">
-      <div class="news-block content-text"><img src="upload/img/page/{{$page->image}}" alt="Image" class="alignleft img-news">
+      <div class="news-block content-text"><img src="upload/img/pages/{{$page->image}}" alt="Image" class="alignleft img-news">
         {{$page->description}}
       </div>
     </div>
