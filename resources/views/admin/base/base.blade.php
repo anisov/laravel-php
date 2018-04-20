@@ -17,6 +17,7 @@
         <li class="admin-menu__el"><a href="{{route('admin-category-create')}}" class="admin-menu__link">Добавить категорию</a></li>
         <li class="admin-menu__el"><a href="{{route('admin-emails')}}" class="admin-menu__link">Все email</a></li>
         <li class="admin-menu__el"><a href="{{route('admin-email-create')}}" class="admin-menu__link">Добавить email</a></li>
+        <li class="admin-menu__el"><a href="{{route('admin-orders')}}" class="admin-menu__link">Все заказы</a></li>
     </ul>
     @yield('content')
 </div>

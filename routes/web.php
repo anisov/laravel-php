@@ -55,6 +55,8 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
     Route::post('/add', 'Admin\adminMailController@add')->name('admin-email-add');
     Route::get('/mail/delete/{mail_id}', 'Admin\adminMailController@delete')->name('admin-email-delete');
 
+    Route::get('/orders', 'Admin\OrderController@index')->name('admin-orders');
+
 });
 
 Route::get('/{page_url}', 'FlatPagesController@index');
