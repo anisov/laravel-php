@@ -28,6 +28,7 @@
       @endif
     </div>
   </div>
+  @include('includes.paginate', ['paginate' => $news])
 @endsection
 @section('content-bottom')
   <div class="content-bottom"></div>

@@ -2,16 +2,9 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Product;
-use Illuminate\Http\Request;
 use App\Category;
 use App\News;
-
-use App\User;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Controller;
-
 
 interface ParamsController
 {

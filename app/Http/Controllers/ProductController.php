@@ -37,7 +37,9 @@ class ProductController extends MainController
             'price' => $price,
             'quantity' => 1,
             'attributes' => [
-                'date' => $date,]
+                'date' => $date,
+                'photo' => $product->photo,
+                'slug' => $product->slug,]
         ];
         if (auth()->user()) {
             $userId = auth()->user()->id;

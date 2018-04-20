@@ -11,7 +11,7 @@ class NewsController extends MainController
 
     public function index()
     {
-        $news = News::all();
+        $news = News::paginate(6);
         $this->data['news'] = $news;
         $this->data['title'] = 'Новости';
         return view('news', $this->data);

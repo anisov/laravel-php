@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class CategoryController extends MainController
 {
@@ -13,7 +12,7 @@ class CategoryController extends MainController
     {
         $category = Category::findBySlug($slug);
         $category_id = $category->id;
-        $products = DB::table('products')->where('category_id', $category_id)->paginate(6);
+        $products = Product::where('category_id', $category_id)->paginate(6);
         $categoryName = $category->name;
         if ($products->count() > 0) {
             $randomProduct = $products->random();

@@ -12,9 +12,9 @@
       <div class="cart-product-list">
           @foreach($orders as $order)
             <div class="cart-product-list__item">
-              <div class="cart-product__item__product-photo"><img src="/upload/img/products/{{$order->photo}}" class="cart-product__item__product-photo__image"></div>
+              <div class="cart-product__item__product-photo"><img src="/upload/img/products/{{$order->attributes->photo}}" class="cart-product__item__product-photo__image"></div>
               <div class="cart-product__item__product-name">
-                <div class="cart-product__item__product-name__content"><a href="#">{{$order->name}}</a></div>
+                <div class="cart-product__item__product-name__content"><a href="{{route('product',$order->attributes->slug)}}">{{$order->name}}</a></div>
               </div>
               <div class="cart-product__item__cart-date">
                 <div class="cart-product__item__cart-date__content">{{$order->attributes->date}}</div>

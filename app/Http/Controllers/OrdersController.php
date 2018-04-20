@@ -6,7 +6,6 @@ use App\adminMail;
 use Mail;
 use App\Order;
 use App\Product;
-use Illuminate\Http\Request;
 use Response;
 
 class OrdersController extends MainController
@@ -30,8 +29,6 @@ class OrdersController extends MainController
 
     public function buy()
     {
-        $countOrders = $this->getTotalOrders();
-        $this->data['countOrders'] = $countOrders;
         if (auth()->user()) {
             $user = auth()->user();
         } else {
@@ -63,6 +60,6 @@ class OrdersController extends MainController
                 $m->to($mail->email, 'Your Application')->subject('Новый заказ!!');
             });
         }
-
+        return Response::json(['success' => '1']);
     }
 }

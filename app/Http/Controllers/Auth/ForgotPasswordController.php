@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\MainController;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
-use App\Http\Controllers\MainTrait;
 
-class ForgotPasswordController extends Controller
+class ForgotPasswordController extends MainController
 {
     /*
     |--------------------------------------------------------------------------
@@ -20,9 +19,7 @@ class ForgotPasswordController extends Controller
     */
 
     use SendsPasswordResetEmails;
-    use MainTrait{
-        MainTrait::__construct as private __MainTrait;
-    }
+
     /**
      * Create a new controller instance.
      *
@@ -30,7 +27,7 @@ class ForgotPasswordController extends Controller
      */
     public function __construct()
     {
-        $this->__MainTrait();
+        parent::__construct();
         $this->middleware('guest');
     }
 
