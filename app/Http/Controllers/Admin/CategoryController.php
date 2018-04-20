@@ -26,7 +26,7 @@ class CategoryController extends Controller
         $category->description = $request->get('description');
         $category->reslug('name');
         $category->save();
-        return redirect('admin/categories/');
+        return redirect('/admin/categories/');
     }
 
     public function create(Request $request)
@@ -52,12 +52,12 @@ class CategoryController extends Controller
         $category->description = $request->get('description');
         $category->save();
         $data['category'] = $category;
-        return redirect('admin/category/' . $category->id);
+        return redirect('/admin/categories');
     }
 
     public function delete($category_id, Request $request)
     {
         Category::destroy($category_id);
-        return redirect('admin/categories');
+        return redirect('/admin/categories');
     }
 }

@@ -47,7 +47,7 @@ class ProductController extends Controller
         $product->description = $request->get('description');
         $product->category_id = $request->get('category');
         $product->save();
-        return redirect('/admin/create-product');
+        return redirect('/admin/products/');
     }
 
     public function create(Request $request)
@@ -59,7 +59,7 @@ class ProductController extends Controller
     {
         $product = Product::where('id', $product_id)->get()->first();
         $data['product'] = $product;
-        return view('admin\product', $data);
+        return view('/admin\product', $data);
     }
 
     public function update($product_id, Request $request)
@@ -82,12 +82,12 @@ class ProductController extends Controller
         $product->description = $request->get('description');
         $product->category_id = $request->get('category');
         $product->save();
-        return redirect('admin/product/' . $product->id);
+        return redirect('/admin/products/');
     }
 
     public function delete($product_id, Request $request)
     {
         Product::destroy($product_id);
-        return redirect('admin/products');
+        return redirect('/admin/products');
     }
 }
