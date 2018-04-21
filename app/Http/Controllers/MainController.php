@@ -27,6 +27,7 @@ class MainController extends Controller
 
     protected function getData()
     {
+        $this->data = [];
         //Перенесено в СommonVariableProvider!
 //        $this->categories = Category::all();
 //        $this->lastNews = News::latest('id')->limit(3)->get()->reverse();

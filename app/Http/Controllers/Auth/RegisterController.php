@@ -80,7 +80,7 @@ class RegisterController extends MainController
 
     public function showRegistrationForm()
     {
-        return view('auth.register', $this->data);
+        return view('auth.register');
     }
 
 

@@ -30,13 +30,12 @@ class OrdersController extends MainController
     public function buy()
     {
         if (auth()->user()) {
-            $user = auth()->user();
+            $userId = auth()->user()->id;
         } else {
-            $user = self::DEFAULT_USER;
+            $userId = self::DEFAULT_USER;
         }
 
-        if ($user and $user != 1) {
-            $userId = $user->id;
+        if ($userId != 1) {
             $orders = \Cart::session($userId)->getContent();
         } else {
             $orders = \Cart::getContent();
@@ -45,11 +44,11 @@ class OrdersController extends MainController
         foreach ($orders as $order) {
             $ord = new Order();
             $ord->product_id = Product::find($order->id)->id;
-            $ord->user_id = $user;
+            $ord->user_id = $userId;
             $ord->save();
         }
-        if ($user and $user != 1) {
-            $userId = $user->id;
+
+        if ($userId!= 1) {
             \Cart::session($userId)->clear();
         } else {
             \Cart::clear();

@@ -41,6 +41,6 @@ class LoginController extends MainController
 
     public function showLoginForm()
     {
-        return view('auth.login', $this->data);
+        return view('auth.login');
     }
 }

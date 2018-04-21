@@ -33,6 +33,6 @@ class ForgotPasswordController extends MainController
 
     public function showLinkRequestForm()
     {
-        return view('auth.passwords.email', $this->data);
+        return view('auth.passwords.email');
     }
 }
